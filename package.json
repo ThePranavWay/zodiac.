@@ -1,0 +1,7 @@
+{
+  "name": "zodiac-seeker-event",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Flask solo/team event; Node is used only for local build validation",
+  "scripts": {"build": "node scripts/build-check.js", "test": "node scripts/build-check.js"}
+}

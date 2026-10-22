@@ -1,0 +1,157 @@
+/* Zodiac Seeker — Mission Briefing / Objectives / Initial Evidence (Oct 2026).
+   Additive styles for the three mission pages on /play. Loaded after the
+   theme styles on play.html only; does not change game/backend logic. */
+.mission-card {
+  background:linear-gradient(180deg,#1a1c21,#141519);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:12px;
+  overflow:hidden;
+  color:#d4d4d4;
+  box-shadow:0 12px 36px rgba(0,0,0,.28);
+}
+.mission-head {
+  padding:22px 28px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,rgba(59,130,246,.05),rgba(255,255,255,.015));
+}
+.mission-head h2 {
+  font:600 24px/1.25 'Inter',system-ui,sans-serif;
+  letter-spacing:-.01em;
+  color:#fafafa;
+  margin:0;
+}
+.mission-head p {
+  font:400 13px/1.6 'Inter',system-ui,sans-serif;
+  color:#a3a3a3;
+  margin:6px 0 0;
+}
+.mission-body {
+  padding:24px 28px 28px;
+  font:400 14px/1.75 'Inter',system-ui,sans-serif;
+  color:#d4d4d4;
+}
+.mission-body > p {margin:0 0 16px}
+.mission-body strong {color:#f5f5f4}
+.mission-scene {
+  background:rgba(220,38,38,.06);
+  border-left:3px solid rgba(220,38,38,.75);
+  padding:16px 20px 8px;
+  margin:20px 0;
+}
+.mission-scene h3 {
+  font:700 11px/1.5 'Inter',system-ui,sans-serif;
+  letter-spacing:.14em;
+  color:#f87171;
+  margin:0 0 8px;
+}
+.mission-scene ul {margin:0;padding:0;list-style:none}
+.mission-scene li {
+  position:relative;
+  padding-left:16px;
+  margin:0 0 8px;
+  font-size:13px;
+  line-height:1.65;
+  color:#e5e5e5;
+}
+.mission-scene li::before {
+  content:'•';
+  position:absolute;
+  left:0;
+  color:#f87171;
+}
+.mission-quote {
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.04);
+  border-radius:8px;
+  padding:16px 20px;
+  margin:18px 0;
+  text-align:center;
+  font:italic 400 16px/1.7 Georgia,'Times New Roman',serif;
+  color:#e5e5e5;
+}
+.mission-quote strong {color:#f87171;font-weight:600}
+.mission-goal {font-weight:600;color:#f5f5f4}
+.mission-note {
+  background:rgba(245,158,11,.09);
+  border:1px solid rgba(245,158,11,.35);
+  border-radius:8px;
+  padding:14px 18px;
+  margin-top:22px;
+  font-size:13px;
+  line-height:1.7;
+  color:#fde68a;
+}
+.mission-note strong {color:#fbbf24}
+.objective-card {
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:18px 20px;
+  margin:0 0 14px;
+}
+.objective-card:last-child {margin-bottom:0}
+.objective-icon {
+  flex:0 0 auto;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:10px;
+  background:rgba(59,130,246,.16);
+  border:1px solid rgba(59,130,246,.3);
+  color:#60a5fa;
+}
+.objective-icon svg {width:22px;height:22px}
+.objective-card h3 {
+  font:600 15px/1.4 'Inter',system-ui,sans-serif;
+  color:#f5f5f4;
+  margin:2px 0 4px;
+}
+.objective-card p {
+  font:400 13px/1.65 'Inter',system-ui,sans-serif;
+  color:#a3a3a3;
+  margin:0;
+}
+.evidence-frame {
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+  margin-top:18px;
+}
+.evidence-frame img {display:block;width:100%;height:auto}
+.download-image {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  min-height:48px;
+  margin-top:16px;
+  padding:12px 20px;
+  border-radius:8px;
+  background:linear-gradient(180deg,#2f6bff,#2563eb);
+  border:1px solid rgba(147,197,253,.45);
+  color:#fff;
+  font:600 14px/1.5 'Inter',system-ui,sans-serif;
+  text-decoration:none;
+  box-sizing:border-box;
+  transition:filter .2s ease,transform .2s ease;
+}
+.download-image svg {width:16px;height:16px}
+.download-image:hover {filter:brightness(1.12);color:#fff;transform:translateY(-1px)}
+@media(max-width:680px) {
+  .sidebar .nav-items {grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sidebar .nav-button {font-size:8.5px;padding:12px 4px;white-space:normal;text-align:center;line-height:1.35}
+  .mission-head {padding:18px 20px}
+  .mission-head h2 {font-size:20px}
+  .mission-body {padding:20px 20px 22px;font-size:13.5px}
+  .objective-card {padding:15px 16px;gap:13px}
+  .objective-icon {width:38px;height:38px}
+  .objective-icon svg {width:19px;height:19px}
+  .mission-quote {font-size:15px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .download-image {transition:none}
+}

@@ -1,0 +1,431 @@
+/* Zodiac Seeker — Dyatlov reference theme, v1. Theme only; no game rules. */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/theme-fonts/cormorant-garamond-300-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/theme-fonts/cormorant-sc-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant SC';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/theme-fonts/cormorant-sc-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/theme-fonts/cormorant-sc-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('/theme-fonts/inconsolata-400-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/theme-fonts/inter-300-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700 900;
+  font-display: swap;
+  src: url('/theme-fonts/cinzel-700-900.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root { --zs-cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22liquidGlow%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2250%25%22%3E%3Cstop%20offset%3D%220%25%22%20style%3D%22stop-color%3Argba%28217%2C119%2C6%2C0.6%29%3Bstop-opacity%3A1%22%20%2F%3E%3Cstop%20offset%3D%22100%25%22%20style%3D%22stop-color%3Argba%28217%2C119%2C6%2C0.1%29%3Bstop-opacity%3A1%22%20%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2210%22%20fill%3D%22url%28%23liquidGlow%29%22%20opacity%3D%220.8%22%20%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228%22%20fill%3D%22none%22%20stroke%3D%22rgba%28217%2C119%2C6%2C0.4%29%22%20stroke-width%3D%221.5%22%20%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%224%22%20fill%3D%22rgba%28217%2C119%2C6%2C0.3%29%22%20%2F%3E%3C%2Fsvg%3E") 16 16, auto; --zs-cursor-hover: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22liquidGlowHover%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2250%25%22%3E%3Cstop%20offset%3D%220%25%22%20style%3D%22stop-color%3Argba%28217%2C119%2C6%2C0.8%29%3Bstop-opacity%3A1%22%20%2F%3E%3Cstop%20offset%3D%22100%25%22%20style%3D%22stop-color%3Argba%28217%2C119%2C6%2C0.2%29%3Bstop-opacity%3A1%22%20%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2210%22%20fill%3D%22url%28%23liquidGlowHover%29%22%20opacity%3D%220.9%22%20%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228%22%20fill%3D%22none%22%20stroke%3D%22rgba%28217%2C119%2C6%2C0.6%29%22%20stroke-width%3D%222%22%20%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%224%22%20fill%3D%22rgba%28217%2C119%2C6%2C0.5%29%22%20%2F%3E%3C%2Fsvg%3E") 16 16, auto; }
+html[data-zodiac-theme="dyatlov"] {
+  color-scheme: dark;
+  --paper:#0c0a09; --paper-light:#171717; --paper-dark:#171717;
+  --ink:#f5f5f4; --muted:#a3a3a3; --rust:#fbbf24; --line:rgba(255,255,255,.1);
+  --mono:'Inconsolata',monospace; --display:'Cormorant SC',Georgia,serif;
+  --body:'Inter',system-ui,sans-serif;
+  --zs-white:#f5f5f4; --zs-muted:#a3a3a3; --zs-border:rgba(255,255,255,.1);
+  background:#0c0a09; scroll-behavior:smooth; cursor:var(--zs-cursor);
+}
+html[data-zodiac-theme] body {
+  color:var(--zs-white); font-family:var(--body); font-size:14px;
+  background:radial-gradient(ellipse at 50% 0%,rgba(120,53,15,.20),transparent 60%),linear-gradient(135deg,#0c0a09,#171717 50%,#0c0a09);
+  min-height:100svh; background-attachment:fixed; cursor:inherit;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+html[data-zodiac-theme] body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; opacity:.025; z-index:0;
+  background-image:linear-gradient(rgba(251,191,36,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(251,191,36,.55) 1px,transparent 1px);
+  background-size:100px 100px; mask-image:linear-gradient(#000,transparent 85%);
+}
+html[data-zodiac-theme] body::after {content:none}
+html[data-zodiac-theme] body>:is(main,footer,#app,.desk,.lab-shell) {position:relative;z-index:1}
+html[data-zodiac-theme] body>#toast {position:fixed;z-index:1000}
+html[data-zodiac-theme] :is(a,button,[role="button"],summary,select,label[for]) {cursor:var(--zs-cursor-hover)}
+html[data-zodiac-theme] :is(a,button,[role="button"]) * {cursor:inherit}
+html[data-zodiac-theme] :is(input,textarea,[contenteditable="true"]) {cursor:text}
+html[data-zodiac-theme] :is(button,input,select,textarea):disabled {cursor:not-allowed;opacity:.5}
+html[data-zodiac-theme] ::selection {background:rgba(217,119,6,.3);color:#fef3c7}
+html[data-zodiac-theme] ::-webkit-scrollbar {width:8px;height:8px}
+html[data-zodiac-theme] ::-webkit-scrollbar-track {background:#0c0a09}
+html[data-zodiac-theme] ::-webkit-scrollbar-thumb {background:#44403c;border-radius:4px}
+html[data-zodiac-theme] ::-webkit-scrollbar-thumb:hover {background:#57534e}
+html[data-zodiac-theme] :focus-visible {outline:2px solid rgba(217,119,6,.6);outline-offset:2px}
+html[data-zodiac-theme] :is(h1,h2,h3,h4) {color:#fafafa;text-wrap:balance}
+html[data-zodiac-theme] :is(p,.form-help,.tiny,.typed-line) {color:#a3a3a3}
+html[data-zodiac-theme] a {color:#d4d4d4;text-underline-offset:4px;transition:color .2s ease}
+html[data-zodiac-theme] a:hover {color:#fde68a}
+html[data-zodiac-theme] :is(.eyebrow,.type-label,.sidebar-label,.section-number,.form-filing,.tiny,.stamp-small,.registry-ref) {font-family:var(--mono);color:#a3a3a3}
+html[data-zodiac-theme] :is(.rust,.brand-symbol,.crosshair-art) {color:#fbbf24}
+html[data-zodiac-theme] :is(.header-rule,.session-rule,.live-dot,.rust-square) {background:#d97706}
+/* Exact glass-control recipe from reference app/register/page.jsx. */
+html[data-zodiac-theme] :where(input:not([type=checkbox]):not([type=radio]):not([type=hidden]),select,textarea) {
+  box-sizing:border-box; min-width:0; max-width:100%; min-height:48px;
+  background:rgba(255,255,255,.05); color:#fff; border:1px solid rgba(255,255,255,.1);
+  border-radius:6px; padding:12px; font:400 14px/1.5 'Inter',system-ui,sans-serif;
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  transition:background .2s,border-color .2s,box-shadow .2s;
+}
+html[data-zodiac-theme] :is(input,textarea)::placeholder {color:rgba(163,163,163,.6);opacity:1}
+html[data-zodiac-theme] :is(input,select,textarea):focus {
+  background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);
+  box-shadow:0 0 0 3px rgba(255,255,255,.05);outline:none;
+}
+html[data-zodiac-theme] select option {color:#fff;background:#171717}
+html[data-zodiac-theme] input:-webkit-autofill {
+  -webkit-text-fill-color:#fff; -webkit-box-shadow:0 0 0 1000px #242424 inset;
+  caret-color:#fff;transition:background-color 5000s;
+}
+html[data-zodiac-theme] :is(button,.primary,.outline,.button,.action,.btn) {
+  color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  border-radius:6px;box-shadow:none;text-decoration:none;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:background .2s,border-color .2s,transform .2s,box-shadow .2s,color .2s;
+  font-family:'Inter',system-ui,sans-serif;
+}
+html[data-zodiac-theme] :is(button,.primary,.outline,.button,.action,.btn):hover:not(:disabled) {
+  color:#fff;background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);
+  transform:translateY(-1px);box-shadow:0 8px 16px rgba(0,0,0,.2);
+}
+html[data-zodiac-theme] :is(button,.primary,.outline,.button,.action,.btn):active:not(:disabled) {transform:translateY(0)}
+html[data-zodiac-theme] :is(button,.primary,.outline,.button,.action,.btn):disabled {transform:none;box-shadow:none}
+html[data-zodiac-theme] :is(.auth-content,.desk,.dispatch-card) label {font:500 12px/1.5 'Inter',sans-serif;letter-spacing:.025em;color:#d4d4d4}
+/* Shared neutral glass cards; no old paper texture, tape or heavy shadows. */
+html[data-zodiac-theme] :is(.auth-card,.paper-card,.entry-panel,.desk section,.dispatch-card,.modal-header,.board-stats,.timeline,.cipher-tiles article,.notes-paper,.working-note,.progress-paper) {
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:24px;box-shadow:0 8px 32px rgba(0,0,0,.37);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:#f5f5f4;
+}
+html[data-zodiac-theme] :is(.paper-card,.auth-card,.working-note,.notes-paper)::before,
+html[data-zodiac-theme] :is(.paper-card,.auth-card,.working-note,.notes-paper)::after {content:none}
+html[data-zodiac-theme] :is(.tape,.note-pin) {display:none}
+html[data-zodiac-theme] .working-note {transform:none}
+html[data-zodiac-theme] :is(.card-rail,.folder-heading,.auth-bottom,.notes-footer,.table-foot,.section-heading,.brief-facts,.brief-note,.case-endnote,.board-notice,.cover-bottom) {border-color:rgba(255,255,255,.1);color:#a3a3a3;background:transparent}
+html[data-zodiac-theme] :is(.card-rail,.folder-heading) {font-family:var(--mono);border-radius:23px 23px 0 0}
+html[data-zodiac-theme] :is(.brief-card p,.working-note p,.evidence-caption p,.timeline p,.cipher-tiles p,.cover-meta,.cover-typed,.cover-bottom,.completed-level-labels,.map-bottom,.auth-note) {color:#a3a3a3}
+html[data-zodiac-theme] :is(.brief-facts b,.evidence-caption h3,.timeline h4,.cipher-tiles b,.working-note h3) {color:#f5f5f4}
+html[data-zodiac-theme] :is(.cover-stamp,.stamp-small,.lab-stamp) {color:#fbbf24;background:rgba(217,119,6,.07);border:1px solid rgba(217,119,6,.3);border-radius:8px}
+/* Launch/intake header and cover: Cormorant SC + reference amber gradient. */
+html[data-zodiac-theme] .header {background:rgba(12,10,9,.76);border-color:rgba(255,255,255,.1);backdrop-filter:blur(20px)}
+html[data-zodiac-theme] .brand {color:#f5f5f4;font:600 20px/1.3 'Inter',sans-serif;letter-spacing:.025em}
+html[data-zodiac-theme] .brand small {font:400 9px/1.6 var(--mono);color:#a3a3a3;letter-spacing:.12em}
+html[data-zodiac-theme] .header-center {color:#a3a3a3}
+html[data-zodiac-theme] .intake-topline {color:#a3a3a3;border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme] #landing {max-width:1280px;padding-top:36px}
+html[data-zodiac-theme] .landing-grid {gap:40px;align-items:start;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+html[data-zodiac-theme] .file-cover {background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:none;transform:none;overflow:hidden}
+html[data-zodiac-theme] .file-cover::before,html[data-zodiac-theme] .file-cover::after {content:none}
+html[data-zodiac-theme] .folder-tab {background:rgba(255,255,255,.05);color:#a3a3a3;position:static;clip-path:none;border:0;border-bottom:1px solid rgba(255,255,255,.08);border-radius:23px 23px 0 0;padding:14px 28px;width:auto;height:auto;margin:0;font:12px var(--mono)}
+html[data-zodiac-theme] .cover-title-row h1 {
+  font-family:'Cormorant SC',Georgia,serif;font-weight:700;line-height:.95;letter-spacing:-.025em;font-size:clamp(52px,6.1vw,86px);
+  background:linear-gradient(135deg,#fde68a,#fdba74,#f59e0b);background-clip:text;-webkit-background-clip:text;color:transparent;
+}
+html[data-zodiac-theme] .crosshair-art {font-size:72px;opacity:.65}
+html[data-zodiac-theme] .cover-typed {border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme] .cover-summary {color:#d4d4d4;font:400 18px/1.7 'Cormorant Garamond',Georgia,serif}
+html[data-zodiac-theme] .cover-evidence {background:#171717;box-shadow:none;border:1px solid rgba(255,255,255,.1);border-radius:12px;transform:none}
+html[data-zodiac-theme] .evidence-photo {border-radius:8px;filter:sepia(.35) brightness(.8)}
+html[data-zodiac-theme] .photo-caption {color:#a3a3a3}
+html[data-zodiac-theme] .auth-content {padding:32px}
+html[data-zodiac-theme] .auth-content h2 {font:600 27px/1.2 'Inter',sans-serif;letter-spacing:-.025em;color:#fafafa}
+html[data-zodiac-theme] .auth-content>p {font-size:13px;color:#a3a3a3;line-height:1.7}
+html[data-zodiac-theme] .auth-content :is(input,select) {height:48px;box-sizing:border-box}
+html[data-zodiac-theme] .auth-content form label {margin:18px 0 8px}
+html[data-zodiac-theme] .auth-content .primary {min-height:48px;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;letter-spacing:0;text-transform:none}
+html[data-zodiac-theme] .auth-tabs {background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:6px;gap:4px;backdrop-filter:blur(10px);margin:24px 0}
+html[data-zodiac-theme] .auth-tabs button {margin:0;background:transparent;border:1px solid transparent;border-radius:12px;padding:10px 12px;flex:1;font-size:13px;white-space:normal;color:#a3a3a3;min-height:42px}
+html[data-zodiac-theme] .auth-tabs .active {background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff}
+html[data-zodiac-theme] .member-fieldset {background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;margin:20px 0;backdrop-filter:blur(10px)}
+html[data-zodiac-theme] .member-fieldset legend {font:500 12px 'Inter',sans-serif;color:#d4d4d4}
+html[data-zodiac-theme] .member-fieldset :is(input,select) {min-height:44px;height:44px}
+html[data-zodiac-theme] .form-help {font:400 12px/1.7 'Inter',sans-serif!important;color:#a3a3a3!important}
+html[data-zodiac-theme] .form-error {color:#fca5a5;font:400 13px/1.6 'Inter',sans-serif}
+html[data-zodiac-theme] .landing-bottom {color:#737373;border-color:rgba(255,255,255,.1)}
+/* Investigation workspace, following the reference's neutral/blue dashboard. */
+html[data-zodiac-theme] .sidebar {background:rgba(10,10,10,.82);border-color:rgba(255,255,255,.1);backdrop-filter:blur(20px)}
+html[data-zodiac-theme] .sidebar-case {color:#f5f5f4;font-family:'Inter',sans-serif;letter-spacing:0;font-weight:600}
+html[data-zodiac-theme] .nav-button {color:#a3a3a3;background:transparent;border:1px solid transparent;border-radius:8px;font-size:11px;letter-spacing:.03em;min-height:42px}
+html[data-zodiac-theme] .nav-button.active {background:rgba(59,130,246,.2);border:1px solid rgba(59,130,246,.3);color:#93c5fd}
+html[data-zodiac-theme] .sidebar-agent {border-color:rgba(255,255,255,.1);color:#a3a3a3}
+html[data-zodiac-theme] .agent-initial {background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);color:#f5f5f4;border-radius:50%}
+html[data-zodiac-theme] .clock-card {background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#a3a3a3;box-shadow:none}
+html[data-zodiac-theme] #timer {font-family:'Inconsolata',monospace;color:#f5f5f4;font-variant-numeric:tabular-nums}
+html[data-zodiac-theme] :is(.timer-note,.clock-labels,.workspace-breadcrumb,.welcome) {color:#a3a3a3}
+html[data-zodiac-theme] .case-hero {border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme] .case-hero h2 {font-family:'Cormorant SC',Georgia,serif;color:#fafafa;font-weight:600;font-size:clamp(42px,4.7vw,66px);letter-spacing:-.02em}
+html[data-zodiac-theme] .case-hero h2 em {color:#d4d4d4}
+html[data-zodiac-theme] .case-hero h2 .underlined {background:none;text-decoration:underline;text-decoration-color:rgba(217,119,6,.5);text-underline-offset:8px;text-decoration-thickness:2px}
+html[data-zodiac-theme] .case-state,html[data-zodiac-theme] .hero-tags span {color:#a3a3a3;border-color:rgba(255,255,255,.1);border-radius:6px;background:rgba(255,255,255,.03)}
+html[data-zodiac-theme] .case-map {background:#101010;border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:none;transform:none}
+html[data-zodiac-theme] .case-map svg {filter:saturate(.5)}
+html[data-zodiac-theme] .map-top {color:#a3a3a3;border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme] .paper-content :is(h3,h4),html[data-zodiac-theme] .section-heading h3 {font-family:'Cormorant Garamond',Georgia,serif}
+html[data-zodiac-theme] :is(.image-button,.image-button:hover) {background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:10px;box-shadow:none;padding:0;transform:none;overflow:hidden}
+html[data-zodiac-theme] .image-button>img {filter:none}
+html[data-zodiac-theme] .inspect-label {background:rgba(10,10,10,.86);color:#f5f5f4;border:1px solid rgba(255,255,255,.15);border-radius:6px;backdrop-filter:blur(10px)}
+html[data-zodiac-theme] .working-note .handwritten {color:#fbbf24;font-family:'Cormorant Garamond',Georgia,serif}
+html[data-zodiac-theme] .text-button {background:transparent;border:0;border-top:1px solid rgba(255,255,255,.1);border-radius:0;color:#d4d4d4;backdrop-filter:none}
+html[data-zodiac-theme] .timeline {border-radius:16px;overflow:hidden}
+html[data-zodiac-theme] .timeline article {border-color:rgba(255,255,255,.1);background:transparent}
+html[data-zodiac-theme] .timeline time {color:#a3a3a3}
+html[data-zodiac-theme] .timeline-index {color:rgba(255,255,255,.12)}
+html[data-zodiac-theme] .cipher-tiles article {border-radius:16px}
+html[data-zodiac-theme] .cipher-glyphs {color:#d4d4d4}
+html[data-zodiac-theme] .notes-paper textarea {color:#e5e5e5;font:400 14px/2 'Inconsolata',monospace;background:rgba(255,255,255,.02);border:0;border-radius:0;margin:0;max-width:none;width:100%;padding:24px;min-height:420px;resize:vertical;backdrop-filter:none;box-shadow:none}
+html[data-zodiac-theme] .notes-footer .outline {font-size:11px;padding:9px 14px}
+html[data-zodiac-theme] .notes-conflict {background:rgba(120,53,15,.18);border:1px solid rgba(217,119,6,.4);border-radius:12px;color:#fde68a}
+html[data-zodiac-theme] .notes-conflict textarea {background:#171717!important;color:#fff!important}
+html[data-zodiac-theme] :is(.notebook-heading h2,.registry-heading h2) {font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em}
+html[data-zodiac-theme] .board-stats {box-shadow:none;border-radius:16px}
+html[data-zodiac-theme] .board-stats>div {border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme] .board-stats b {color:#f5f5f4}
+html[data-zodiac-theme] .board-stats span {color:#a3a3a3}
+html[data-zodiac-theme] table {color:#d4d4d4;background:transparent;border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme] :is(th,td) {border-color:rgba(255,255,255,.1);background:transparent}
+html[data-zodiac-theme] th {background:rgba(255,255,255,.05);color:#a3a3a3}
+html[data-zodiac-theme] tr:first-child td {background:rgba(255,255,255,.025)}
+html[data-zodiac-theme] tbody tr:hover td {background:rgba(255,255,255,.04)}
+html[data-zodiac-theme] :is(.solved,.completed) {color:#86efac}
+html[data-zodiac-theme] .unsolved {color:#737373}
+html[data-zodiac-theme] :is(.member-pill,.invitation) {background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#d4d4d4}
+html[data-zodiac-theme] .entry-panel {border-radius:16px}
+html[data-zodiac-theme] .modal-header {border-radius:16px 16px 0 0}
+html[data-zodiac-theme] dialog {color:#fff;background:#101010;border:1px solid rgba(255,255,255,.15);border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,.6)}
+html[data-zodiac-theme] dialog::backdrop {background:rgba(0,0,0,.8);backdrop-filter:blur(8px)}
+html[data-zodiac-theme] #toast {background:rgba(23,23,23,.96);color:#fff;border:1px solid rgba(255,255,255,.15);border-radius:12px;font:13px/1.6 'Inter',sans-serif;box-shadow:0 8px 32px rgba(0,0,0,.37)}
+html[data-zodiac-theme] footer {border-color:rgba(255,255,255,.1);color:#737373;font-family:var(--mono)}
+/* Organizer and support pages retain every control and their existing behavior. */
+html[data-zodiac-theme] .desk {max-width:1100px;padding:12px 0 48px}
+html[data-zodiac-theme] .desk header {border-bottom:1px solid rgba(255,255,255,.1);padding:24px 0 32px}
+html[data-zodiac-theme] .desk h1 {font:600 clamp(42px,6vw,68px)/1.05 'Cormorant Garamond',Georgia,serif;margin:12px 0 18px}
+html[data-zodiac-theme] .desk h2 {font:600 23px/1.25 'Inter',sans-serif;margin-bottom:16px}
+html[data-zodiac-theme] .desk section {padding:28px;margin:24px 0}
+html[data-zodiac-theme] .desk .danger {background:rgba(127,29,29,.09);border:1px solid rgba(248,113,113,.3)}
+html[data-zodiac-theme] .desk .danger button {background:rgba(220,38,38,.18);border-color:rgba(248,113,113,.4);color:#fecaca}
+html[data-zodiac-theme] .desk .danger button:hover {background:rgba(220,38,38,.3)}
+html[data-zodiac-theme] :is(.status,.lab-message) {background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:12px;color:#d4d4d4}
+html[data-zodiac-theme] :is(.lab-header,.lab-brand,.lab-intro,.lab-disclaimer) {color:#d4d4d4;border-color:rgba(255,255,255,.1);background:transparent}
+html[data-zodiac-theme] .lab-header {background:rgba(10,10,10,.75);backdrop-filter:blur(20px)}
+html[data-zodiac-theme] .lab-intro h1 {font-family:'Cormorant Garamond',Georgia,serif;color:#fafafa}
+html[data-zodiac-theme] :is(.dispatch-card,.ticket-item,.ticket-message,.ticket-thread,.notice-item) {background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#d4d4d4;border-radius:12px}
+/* Landing and ending: do not alter dates, clock code, results or access rules. */
+html[data-zodiac-theme][data-zodiac-page="launch"] body {background:radial-gradient(ellipse at 50% 0%,rgba(120,53,15,.2),transparent 65%),linear-gradient(135deg,#0c0a09,#171717,#0c0a09);color:#fff}
+html[data-zodiac-theme][data-zodiac-page="launch"] header {border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme][data-zodiac-page="launch"] .brand {font-size:14px;font-weight:500}
+html[data-zodiac-theme][data-zodiac-page="launch"] .hero {background:transparent;border:0;box-shadow:none;border-radius:0;backdrop-filter:none}
+html[data-zodiac-theme][data-zodiac-page="launch"] h1,
+html[data-zodiac-theme][data-zodiac-page="ending"] h1 {font:700 clamp(58px,8vw,108px)/1 'Cormorant SC',Georgia,serif;letter-spacing:-.025em;background:linear-gradient(135deg,#fde68a,#fdba74,#f59e0b);background-clip:text;-webkit-background-clip:text;color:transparent;text-wrap:balance}
+html[data-zodiac-theme][data-zodiac-page="launch"] h1 em {color:inherit;font-style:normal}
+html[data-zodiac-theme][data-zodiac-page="launch"] :is(.box,.meta>div,.notice) {background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;color:#d4d4d4;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+html[data-zodiac-theme][data-zodiac-page="launch"] .box {padding:22px 12px;backdrop-filter:blur(20px)}
+html[data-zodiac-theme][data-zodiac-page="launch"] .num {font-family:'Inconsolata',monospace;color:#fff;font-weight:500;font-size:clamp(42px,6vw,68px)}
+html[data-zodiac-theme][data-zodiac-page="launch"] .label {font-family:'Inter',sans-serif;letter-spacing:.12em;color:#a3a3a3;font-size:10px}
+html[data-zodiac-theme][data-zodiac-page="launch"] :is(.kicker,.file-id,.small,.sub,.meta,.intro) {color:#a3a3a3}
+html[data-zodiac-theme][data-zodiac-page="launch"] .seal {border-color:rgba(217,119,6,.35);color:#fbbf24;background:rgba(217,119,6,.07)}
+html[data-zodiac-theme][data-zodiac-page="launch"] .badge {background:rgba(217,119,6,.08);border-color:rgba(217,119,6,.3);color:#fde68a;border-radius:999px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .live .badge {background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.3);color:#86efac}
+html[data-zodiac-theme][data-zodiac-page="launch"] #enter {display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 28px;border-radius:6px;background:rgba(217,119,6,.15);border:1px solid rgba(217,119,6,.3);color:#fde68a;letter-spacing:.025em;box-shadow:none}
+html[data-zodiac-theme][data-zodiac-page="launch"] #enter:hover {background:rgba(217,119,6,.25);border-color:rgba(217,119,6,.6);transform:translateY(-1px);box-shadow:0 8px 24px rgba(217,119,6,.12)}
+html[data-zodiac-theme][data-zodiac-page="launch"] footer {color:#737373}
+html[data-zodiac-theme][data-zodiac-page="ending"] body {background:#0c0a09}
+html[data-zodiac-theme][data-zodiac-page="ending"] .hero {background:transparent;border:0;box-shadow:none;backdrop-filter:none;padding:26px 0}
+html[data-zodiac-theme][data-zodiac-page="ending"] h1 {font-size:clamp(54px,7vw,84px)}
+html[data-zodiac-theme][data-zodiac-page="ending"] .status {border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.04);color:#a3a3a3;padding:8px 14px}
+html[data-zodiac-theme][data-zodiac-page="ending"] .brand {font-family:'Inter',sans-serif;font-size:15px;color:#d4d4d4}
+html[data-zodiac-theme][data-zodiac-page="ending"] :is(.panel,.winner,.stat) {background:#1a1a1b;border:1px solid rgba(255,255,255,.1);border-radius:8px;box-shadow:none;backdrop-filter:none}
+html[data-zodiac-theme][data-zodiac-page="ending"] .winner {transform:none;border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme][data-zodiac-page="ending"] .winner.gold {border-color:rgba(250,204,21,.3)}
+html[data-zodiac-theme][data-zodiac-page="ending"] :is(.panel h2,.winner h3) {font-family:'Inter',sans-serif;color:#fff}
+html[data-zodiac-theme][data-zodiac-page="ending"] .winner h3 {font-size:20px}
+html[data-zodiac-theme][data-zodiac-page="ending"] :is(.section-label,.kicker,.closed-at,.result-note,.winner-meta,.stat span,.quiet) {color:#a3a3a3}
+html[data-zodiac-theme][data-zodiac-page="ending"] .stat b {color:#f5f5f4;font-family:'Inconsolata',monospace}
+html[data-zodiac-theme][data-zodiac-page="ending"] .winner-members {border-color:rgba(255,255,255,.1);color:#d4d4d4}
+html[data-zodiac-theme][data-zodiac-page="ending"] .action.primary {background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff}
+/* Subtle reference-style floating amber particles; no cursor follower. */
+html[data-zodiac-theme] .zs-atmosphere {position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;user-select:none;contain:strict}
+html[data-zodiac-theme] .zs-particle {position:absolute;left:var(--x);top:var(--y);width:2px;height:2px;border-radius:50%;background:rgba(251,191,36,.22);animation:zs-drift var(--duration) ease-in-out infinite;animation-delay:var(--delay)}
+@keyframes zs-drift {0%,100%{transform:translate3d(0,0,0);opacity:.15}50%{transform:translate3d(12px,-35px,0);opacity:.5}}
+html[data-zodiac-theme] [data-zs-reveal] {transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+html[data-zodiac-theme][data-zs-motion="on"] [data-zs-reveal]:not([data-zs-visible]) {opacity:0;transform:translateY(12px)}
+@media(max-width:900px) {
+ html[data-zodiac-theme] .landing-grid {grid-template-columns:minmax(0,1fr);gap:26px;max-width:680px;margin-inline:auto}
+ html[data-zodiac-theme] .cover-title-row h1 {font-size:72px}
+ html[data-zodiac-theme] .case-hero h2 {font-size:56px}
+}
+@media(max-width:600px) {
+ html[data-zodiac-theme] body {background-attachment:scroll}
+ html[data-zodiac-theme] :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {font-size:16px}
+ html[data-zodiac-theme] .auth-content {padding:24px}
+ html[data-zodiac-theme] .auth-content h2 {font-size:24px}
+ html[data-zodiac-theme] .auth-tabs button {padding:9px 7px;font-size:12px}
+ html[data-zodiac-theme] .member-fieldset {padding:12px}
+ html[data-zodiac-theme] .brand {font-size:17px}
+ html[data-zodiac-theme] .cover-title-row h1 {font-size:56px}
+ html[data-zodiac-theme] .case-hero h2 {font-size:44px}
+ html[data-zodiac-theme] .crosshair-art {font-size:52px}
+ html[data-zodiac-theme] .folder-tab {padding:12px 22px}
+ html[data-zodiac-theme] .desk section {padding:20px}
+ html[data-zodiac-theme] .desk h2 {font-size:20px}
+ html[data-zodiac-theme] .header-center {display:none}
+ html[data-zodiac-theme] .nav-button {font-size:10px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] h1 {font-size:clamp(46px,12vw,72px)}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .box {padding:18px 7px;border-radius:12px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .num {font-size:42px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .label {font-size:9px;letter-spacing:.08em}
+}
+@media(pointer:coarse) {html[data-zodiac-theme],html[data-zodiac-theme] :is(a,button,[role=button],summary,select,label[for]) {cursor:auto}}
+@media(prefers-reduced-motion:reduce) {
+ html[data-zodiac-theme] {scroll-behavior:auto}
+ html[data-zodiac-theme] .zs-atmosphere {display:none}
+ html[data-zodiac-theme] [data-zs-reveal] {opacity:1!important;transform:none!important}
+ html[data-zodiac-theme] *,html[data-zodiac-theme] *::before,html[data-zodiac-theme] *::after {animation:none!important;transition:none!important}
+}
+
+/* Exact existing launch/end markup adapters. */
+html[data-zodiac-theme][data-zodiac-page="launch"] :is(.wordmark,.top-right,.redirect-note,.footer-middle,.support,.date) {color:#a3a3a3;font-family:'Inter',sans-serif}
+html[data-zodiac-theme][data-zodiac-page="launch"] .wordmark {color:#f5f5f4;letter-spacing:.1em;font-size:11px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .wordmark :is(small,svg) {color:#a3a3a3}
+html[data-zodiac-theme][data-zodiac-page="launch"] .subtitle {font:400 clamp(23px,3vw,32px)/1.4 'Cormorant Garamond',Georgia,serif;color:#d4d4d4}
+html[data-zodiac-theme][data-zodiac-page="launch"] h1 span,
+html[data-zodiac-theme][data-zodiac-page="ending"] h1 span {background:linear-gradient(135deg,#fde68a,#fdba74,#f59e0b);background-clip:text;-webkit-background-clip:text;color:transparent;letter-spacing:inherit}
+html[data-zodiac-theme][data-zodiac-page="launch"] .countdown {grid-template-columns:repeat(4,minmax(0,94px));gap:14px;max-width:100%;margin-top:10px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .unit {border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.05);padding:16px 10px;backdrop-filter:blur(20px)}
+html[data-zodiac-theme][data-zodiac-page="launch"] .unit::after {content:none}
+html[data-zodiac-theme][data-zodiac-page="launch"] .unit strong {color:#fff;font:500 42px/1.1 'Inconsolata',monospace;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+html[data-zodiac-theme][data-zodiac-page="launch"] .unit small {color:#a3a3a3;font:400 9px/1.5 'Inter',sans-serif;letter-spacing:.12em}
+html[data-zodiac-theme][data-zodiac-page="launch"] .ornament {color:#d97706;opacity:.6}
+html[data-zodiac-theme][data-zodiac-page="launch"] .ornament::before,html[data-zodiac-theme][data-zodiac-page="launch"] .ornament::after {background:linear-gradient(90deg,transparent,rgba(217,119,6,.5))}
+html[data-zodiac-theme][data-zodiac-page="launch"] .dot {background:#d97706}
+html[data-zodiac-theme][data-zodiac-page="launch"] #locked {background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:#737373;opacity:1}
+html[data-zodiac-theme][data-zodiac-page="ending"] :is(header,.closing-note) {border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme][data-zodiac-page="ending"] .brand small {color:#a3a3a3;font-family:'Inter',sans-serif}
+html[data-zodiac-theme][data-zodiac-page="ending"] .brand svg {color:#d97706}
+html[data-zodiac-theme][data-zodiac-page="ending"] :is(.header-ref,.header-ref span,.date,.date b,.hero-note small,.winner-detail,.winner-time,.result-status,.preview,.signature) {color:#a3a3a3;font-family:'Inter',sans-serif}
+html[data-zodiac-theme][data-zodiac-page="ending"] .hero-note {color:#d4d4d4;font-family:'Cormorant Garamond',Georgia,serif}
+html[data-zodiac-theme][data-zodiac-page="ending"] .date {background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);border-radius:8px}
+html[data-zodiac-theme][data-zodiac-page="ending"] :is(.chapter-rule,.closing-note svg) {color:#d97706}
+html[data-zodiac-theme][data-zodiac-page="ending"] .chapter-rule::before,html[data-zodiac-theme][data-zodiac-page="ending"] .chapter-rule::after {background:rgba(255,255,255,.1)}
+html[data-zodiac-theme][data-zodiac-page="ending"] .podium-heading h2 {font:600 26px/1.3 'Inter',sans-serif;color:#f5f5f4}
+html[data-zodiac-theme][data-zodiac-page="ending"] .place {color:#a3a3a3;font-family:'Inconsolata',monospace}
+html[data-zodiac-theme][data-zodiac-page="ending"] .winner-name {font:600 20px/1.3 'Inter',sans-serif;color:#fff}
+html[data-zodiac-theme][data-zodiac-page="ending"] .winner-time {border-color:rgba(255,255,255,.1);font-family:'Inconsolata',monospace}
+html[data-zodiac-theme][data-zodiac-page="ending"] .retry {font:500 12px/1.5 'Inter',sans-serif;padding:12px 20px;min-height:44px}
+@media(max-width:600px) {
+ html[data-zodiac-theme][data-zodiac-page="launch"] .countdown {grid-template-columns:repeat(4,minmax(0,68px));gap:10px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .unit {padding:14px 6px;border-radius:12px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .unit strong {font-size:34px}
+ html[data-zodiac-theme][data-zodiac-page="ending"] .brand {font-size:10px;letter-spacing:.1em}
+ html[data-zodiac-theme][data-zodiac-page="ending"] .podium-heading h2 {font-size:22px}
+}
+html[data-zodiac-theme="dyatlov"] {--bg:#0c0a09;--gold:#d97706;--green:#4ade80;--soft:#a3a3a3;--rule:rgba(255,255,255,.1)}
+html[data-zodiac-theme] .cover-body {background:transparent;border:0;box-shadow:none}
+html[data-zodiac-theme] .cover-body::after {content:none}
+html[data-zodiac-theme] .cover-meta {border-color:rgba(255,255,255,.1)}
+html[data-zodiac-theme] .form-filing {background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.1);border-radius:23px 23px 0 0}
+html[data-zodiac-theme] .form-error {background:rgba(127,29,29,.16);border:1px solid rgba(248,113,113,.3);border-radius:8px;padding:12px}
+html[data-zodiac-theme] .case-hero {background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:24px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+html[data-zodiac-theme] .case-hero-text::before {content:none}
+html[data-zodiac-theme] .nav-button.active::before {background:#3b82f6}
+html[data-zodiac-theme] .table-wrap {background:#101010;border:1px solid rgba(255,255,255,.1);border-radius:12px}
+html[data-zodiac-theme] :is(.agent-avatar,.levels-count) {background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#d4d4d4;border-radius:6px}
+html[data-zodiac-theme] .podium-card {background:#1a1a1b;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:20px}
+html[data-zodiac-theme] .podium-card strong {font:600 20px/1.4 'Inter',sans-serif;color:#fff}
+html[data-zodiac-theme] .podium-card small {color:#a3a3a3}
+html[data-zodiac-theme][data-zodiac-page="ending"] .winner::before {content:none}
+/* Match the reference's page-specific surfaces, not one flat gold theme. */
+html[data-zodiac-theme][data-zodiac-page="play"] body:not(.workspace) {background:radial-gradient(ellipse at 85% 0%,rgba(38,38,38,.2),transparent 65%),linear-gradient(135deg,#0a0a0a,#171717,#0c0a09)}
+html[data-zodiac-theme] body.workspace {background:#0a0a0a}
+html[data-zodiac-theme] body.workspace::before {opacity:0}
+html[data-zodiac-theme] .workspace .zs-atmosphere {display:none}
+html[data-zodiac-theme] .workspace :is(.paper-card,.entry-panel,.notes-paper,.working-note,.progress-paper,.case-hero,.board-stats) {background:#1a1a1b;border:1px solid rgba(255,255,255,.1);border-radius:8px;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+html[data-zodiac-theme] .workspace .sidebar {background:#0a0a0a}
+html[data-zodiac-theme] .workspace .case-map {background:#111;border-radius:0;border:0;border-left:1px solid rgba(255,255,255,.1)}
+html[data-zodiac-theme] .workspace .card-rail {border-radius:7px 7px 0 0;background:rgba(255,255,255,.02)}
+html[data-zodiac-theme] .auth-note strong {color:#d4d4d4}
+html[data-zodiac-theme] .welcome,html[data-zodiac-theme] .section-heading {border-color:rgba(255,255,255,.1)}
+@media(max-width:650px) {html[data-zodiac-theme] .workspace .case-map {border-left:0;border-top:1px solid rgba(255,255,255,.1)}}
+
+html[data-zodiac-theme] .notes-paper textarea:focus {outline:2px solid rgba(217,119,6,.6);outline-offset:-2px}
+html[data-zodiac-theme] .nav-button.active:hover:not(:disabled) {background:rgba(59,130,246,.3);border-color:rgba(59,130,246,.4);color:#93c5fd;box-shadow:none}
+html[data-zodiac-theme] :is(.cover-stamp,.stamp-small,.lab-stamp) {transform:none;box-shadow:none}
+html[data-zodiac-theme] .clock-card::before,html[data-zodiac-theme] .clock-card::after {content:none}
+html[data-zodiac-theme] :is(.chronology,.cipher-section) {border-color:rgba(255,255,255,.1)}
+
+
+/* Launch hero enlargement + View Brochure glow (Oct 2026 organizer update). */
+html[data-zodiac-theme][data-zodiac-page="launch"] main {width:100%;max-width:none;justify-content:center;padding:clamp(28px,4vh,52px) clamp(16px,3vw,48px);gap:clamp(16px,3vh,32px)}
+html[data-zodiac-theme][data-zodiac-page="launch"] main>:is(.eyebrow,.ornament,.subtitle,.date,.redirect-note) {margin:0}
+html[data-zodiac-theme][data-zodiac-page="launch"] h1 {font-family:'Cinzel','Cormorant SC',Georgia,serif;font-weight:900;font-size:clamp(62px,min(17vw,23vh),320px);line-height:.94;letter-spacing:.02em;width:100%;max-width:98vw}
+html[data-zodiac-theme][data-zodiac-page="launch"] h1 .title-the {font-size:.27em;font-weight:700;letter-spacing:.52em;padding-left:.52em;margin-bottom:.55em}
+html[data-zodiac-theme][data-zodiac-page="launch"] h1 span+span {margin-top:.04em;letter-spacing:.14em;padding-left:.14em}
+html[data-zodiac-theme][data-zodiac-page="launch"] h1 span {letter-spacing:inherit}
+html[data-zodiac-theme][data-zodiac-page="launch"] .subtitle {font-size:clamp(27px,3.6vw,48px)}
+html[data-zodiac-theme][data-zodiac-page="launch"] .badge {font-size:12px;padding:11px 20px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .eyebrow {font-size:11px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .date {font-size:12px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .countdown {width:min(94vw,820px);grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,22px);margin-top:0}
+html[data-zodiac-theme][data-zodiac-page="launch"] .unit {padding:24px 12px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .unit strong {font-size:clamp(44px,5.4vw,76px)}
+html[data-zodiac-theme][data-zodiac-page="launch"] .actions .action {min-height:56px}
+html[data-zodiac-theme][data-zodiac-page="launch"] #locked {padding:16px 34px}
+html[data-zodiac-theme][data-zodiac-page="launch"] #enter {min-height:56px;padding:16px 34px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .actions {display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin-top:28px}
+html[data-zodiac-theme][data-zodiac-page="launch"] .actions .action {margin-top:0}
+html[data-zodiac-theme][data-zodiac-page="launch"] #brochure {display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:16px 36px;border-radius:6px;background:linear-gradient(135deg,#fb923c,#f97316 45%,#ea580c);border:1px solid rgba(255,237,213,.55);color:#fff;font:600 12px/1.5 'Inter',sans-serif;letter-spacing:.12em;text-decoration:none;box-shadow:0 0 18px rgba(249,115,22,.55),0 0 46px rgba(249,115,22,.28),0 10px 28px rgba(0,0,0,.35);animation:zs-brochure-pulse 2.6s ease-in-out infinite}
+html[data-zodiac-theme][data-zodiac-page="launch"] #brochure svg {width:14px;height:14px}
+html[data-zodiac-theme][data-zodiac-page="launch"] #brochure:hover {background:linear-gradient(135deg,#fdba74,#fb923c 45%,#f97316);color:#fff;transform:translateY(-2px);box-shadow:0 0 26px rgba(249,115,22,.8),0 0 68px rgba(249,115,22,.42),0 14px 32px rgba(0,0,0,.4)}
+@keyframes zs-brochure-pulse {0%,100%{box-shadow:0 0 14px rgba(249,115,22,.45),0 0 34px rgba(249,115,22,.22),0 10px 28px rgba(0,0,0,.35)}50%{box-shadow:0 0 26px rgba(249,115,22,.8),0 0 66px rgba(249,115,22,.4),0 10px 28px rgba(0,0,0,.35)}}
+@media(max-width:640px) {
+ html[data-zodiac-theme][data-zodiac-page="launch"] main {padding:30px 14px 40px;gap:18px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] h1 {font-size:18vw}
+ html[data-zodiac-theme][data-zodiac-page="launch"] h1 span+span {letter-spacing:.06em;padding-left:.06em}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .subtitle {font-size:27px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .countdown {grid-template-columns:repeat(4,minmax(0,1fr));width:min(94vw,420px);gap:10px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .unit {padding:16px 6px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .unit strong {font-size:38px}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .actions {flex-direction:column;width:min(100%,360px)}
+ html[data-zodiac-theme][data-zodiac-page="launch"] .actions .action {width:100%}
+}
+@media(prefers-reduced-motion:reduce) {html[data-zodiac-theme][data-zodiac-page="launch"] #brochure {animation:none}}
